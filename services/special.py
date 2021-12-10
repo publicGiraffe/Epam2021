@@ -27,7 +27,7 @@ class SpecialService:
         try:
             db.session.add(special)
             db.session.commit()
-            return
+            return "Congrats! You have successfully added a new special!"
         except SQLAlchemyError as ex:
             return ex
 
@@ -38,7 +38,7 @@ class SpecialService:
             for key, value in kwargs:
                 setattr(special, key, value)
             db.session.commit()
-            return
+            return "Congrats! You have successfully updated the information!"
         except SQLAlchemyError as ex:
             return ex
 
